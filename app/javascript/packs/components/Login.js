@@ -15,7 +15,9 @@ const Login = (props) => {
       name: name,
       password: password
     },
-    { withCredentials: true })
+    { withCredentials: true,
+      headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'}
+    })
     .then(response => {
       loginHandler(response.data)
     })
