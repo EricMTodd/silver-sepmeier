@@ -1,8 +1,14 @@
 import React from 'react'
 
-const About = () => {
+const About = (props) => {
+  const {
+    about
+  } = props
   return(
-    <h1>About</h1>
+    <div id='about'>
+      <h1>About</h1>
+      <p>{about}</p>
+    </div>
   )
 }
 
