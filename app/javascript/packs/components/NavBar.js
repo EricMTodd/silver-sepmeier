@@ -8,7 +8,7 @@ const NavBar = (props) => {
 
   if (loggedIn) {
     return(
-      <div id='nav-bar'>
+      <div id='nav'>
         NavBar
         <button onClick={() => logoutHandler()}>Log out</button>
       </div> 
@@ -16,8 +16,12 @@ const NavBar = (props) => {
   }
 
   return(
-    <div id='nav-bar'>
-      NavBar
+    <div id='nav'>
+      <div id='nav-icon'>
+        <span />
+        <span />
+        <span />
+      </div>
     </div>
   )
 }

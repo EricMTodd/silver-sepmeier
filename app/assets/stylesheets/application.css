@@ -19,8 +19,16 @@
     color: black;
   }
 
+  span {
+    background-color: rgba(50, 50, 50, 1);
+    height: 3px;
+    width: 50px;
+    margin-top: calc(50px / 5);
+    border-radius: 15px;
+  }
+  
   /* Class selectors */
-
+  
   /* Id selectors */
   #footer {
     background-color: black;
@@ -33,7 +41,7 @@
   #footer a {
     margin-left: 5px;
   }
-
+  
   #main {
     background-color: rgba(50, 50, 50, 1);
     height: calc(100vh - 75px);
@@ -41,9 +49,15 @@
     padding-right: calc(33.333% / 2);
   }
 
-  #nav-bar {
+  #nav {
     background-color: black;
     height: 50px;
+  }
+
+  #nav-icon {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
   }
 }
 
