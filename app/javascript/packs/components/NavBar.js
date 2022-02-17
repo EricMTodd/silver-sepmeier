@@ -6,6 +6,18 @@ const NavBar = (props) => {
     logoutHandler
   } = props
 
+  const toggleNav = () => {
+    console.log('toggleNav')
+    let navIcon = document.querySelector('#nav-icon')
+    if (navIcon.classList.contains('inactive-nav-icon')) {
+      navIcon.classList.remove('inactive-nav-icon')
+      navIcon.classList.add('active-nav-icon')
+    } else {
+      navIcon.classList.remove('active-nav-icon')
+      navIcon.classList.add('inactive-nav-icon')
+    }
+  }
+
   if (loggedIn) {
     return(
       <div id='nav'>
@@ -17,7 +29,7 @@ const NavBar = (props) => {
 
   return(
     <div id='nav'>
-      <div id='nav-icon'>
+      <div id='nav-icon' className='inactive-nav-icon' onClick={() => toggleNav()}>
         <span />
         <span />
         <span />
