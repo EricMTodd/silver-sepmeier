@@ -22,13 +22,20 @@ const NavBar = (props) => {
       navLinks.classList.add('hidden-nav-links')
     }
   }
-
+  
   if (loggedIn) {
     return(
       <div id='nav'>
-        NavBar
+        <div id='nav-icon' className='inactive-nav-icon' onClick={() => toggleNav()}>
+          <span />
+          <span />
+          <span />
+        </div>
         <button onClick={() => logoutHandler()}>Log out</button>
-      </div> 
+        <div id='nav-links' className='hidden-nav-links'>
+          <Link to='/' onClick={() => toggleNav()}>About</Link>
+        </div>
+      </div>
     )
   }
 
