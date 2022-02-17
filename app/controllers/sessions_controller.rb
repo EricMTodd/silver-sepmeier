@@ -26,4 +26,21 @@ class SessionsController < ApplicationController
       loggedIn: false
     }
   end
+
+  def logged_in
+    if session[:user_id]
+      user = User.first
+      render json: {
+        message: 'Logged in.',
+        user: user,
+        loggedIn: true
+      }
+    else
+      render json: {
+        message: 'Logged out.',
+        user: {},
+        loggedIn: false
+      }
+    end
+  end
 end

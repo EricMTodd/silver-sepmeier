@@ -14,8 +14,7 @@ const Login = (props) => {
     axios.post('http://localhost:3000/api/login', {
       name: name,
       password: password
-    },
-    { withCredentials: true })
+    })
     .then(response => {
       loginHandler(response.data)
     })

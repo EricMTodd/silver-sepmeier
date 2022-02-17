@@ -21,7 +21,7 @@ const App = () => {
 
   const logoutHandler = () => {
     console.log('logoutHandler')
-    axios.delete('http://localhost:3000/api/logout', { withCredentials: true })
+    axios.delete('http://localhost:3000/api/logout')
     .then(response => {
       console.log(response)
       setLoggedIn(response.data.loggedIn)
@@ -31,9 +31,17 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/user', { withCredentials: true })
+    axios.get('http://localhost:3000/api/user')
     .then(response => {
       setAbout(response.data.user.about)
+    })
+    .catch(error => console.log(error))
+
+    axios.get('http://localhost:3000/api/loggedIn')
+    .then(response => {
+      console.log(response)
+      setLoggedIn(response.data.loggedIn)
+      setUser(response.data.user)
     })
     .catch(error => console.log(error))
   }, [])
