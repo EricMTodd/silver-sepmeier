@@ -1,4 +1,5 @@
 import React from 'react'
+import silverPortrait from '../../../assets/images/silver-portrait.png'
 
 const About = (props) => {
   const {
@@ -6,7 +7,10 @@ const About = (props) => {
   } = props
   return(
     <div id='about'>
-      <h1>About</h1>
+      <div id='about-header'>
+        <h1>Silver Sepmeier</h1>
+        <img src={silverPortrait} alt='Portrait' id='silver-portrait'/>
+      </div>
       <p>{about}</p>
     </div>
   )
