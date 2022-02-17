@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import About from './About'
 import Login from './Login'
+import Admin from './Admin'
 
 const Main = (props) => {
   const {
@@ -14,7 +15,8 @@ const Main = (props) => {
     <div id='main'>
       <Routes>
         <Route path='/' element={<About loggedIn={loggedIn} />} />
-        <Route path='login' element={<Login loginHandler={loginHandler} />} />
+        <Route path='/login' element={<Login loginHandler={loginHandler} />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
     </div>
   )
