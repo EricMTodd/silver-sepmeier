@@ -14,4 +14,20 @@ class UsersController < ApplicationController
       }
     end
   end
+
+  def update
+    user = User.first
+
+    if user.update(about: params[:about])
+      render json: {
+        message: 'Successfully updated user.',
+        user: user
+      }
+    else
+      render json: {
+        message: 'Failed to update user!',
+        user: user
+      }
+    end
+  end
 end

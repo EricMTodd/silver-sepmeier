@@ -18,6 +18,11 @@
   input, textarea, button {
     color: black;
   }
+
+  textarea {
+    height: 100px;
+    width: 66.666vw;
+  }
   
   /* Class selectors */
 
@@ -39,12 +44,28 @@
     transition: 0.2s;
   }
 
+  .hidden-about-text {
+    display: none;
+  }
+
   .hidden-nav-links {
     transform: translate(-100%);
   }
 
+  .hidden-update-about-form {
+    display: none;
+  }
+
+  .shown-about-text {
+    display: block;
+  }
+
   .shown-nav-links {
     transform: translate(0);
+  }
+
+  .shown-update-about-form {
+    display: block;
   }
   
   /* Id selectors */

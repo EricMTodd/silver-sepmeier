@@ -6,7 +6,6 @@ import Main from './Main'
 import Footer from './Footer'
 
 const App = () => {
-  const [about, setAbout] = useState('')
   const [loggedIn, setLoggedIn] = useState(false)
   const [user, setUser] = useState({})
   const navigate = useNavigate()
@@ -31,12 +30,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/user')
-    .then(response => {
-      setAbout(response.data.user.about)
-    })
-    .catch(error => console.log(error))
-
     axios.get('http://localhost:3000/api/loggedIn')
     .then(response => {
       console.log(response)
@@ -49,7 +42,7 @@ const App = () => {
   return(
     <div id='app'>
       <NavBar loggedIn={loggedIn} logoutHandler={logoutHandler} />
-      <Main loginHandler={loginHandler} about={about} />
+      <Main loginHandler={loginHandler} loggedIn={loggedIn} />
       <Footer />
     </div>
   )

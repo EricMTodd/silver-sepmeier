@@ -6,14 +6,14 @@ import Login from './Login'
 const Main = (props) => {
   const {
     loginHandler,
-    about
+    loggedIn
   } = props
 
 
   return(
     <div id='main'>
       <Routes>
-        <Route path='/' element={<About about={about} />} />
+        <Route path='/' element={<About loggedIn={loggedIn} />} />
         <Route path='login' element={<Login loginHandler={loginHandler} />} />
       </Routes>
     </div>
