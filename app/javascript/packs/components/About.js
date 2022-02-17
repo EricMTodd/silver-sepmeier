@@ -6,9 +6,11 @@ const About = (props) => {
   const {
     loggedIn
   } = props
-  const [about, setAbout] = useState('')
+  const [currentAbout, setCurrentAbout] = useState('')
+  const [newAbout, setNewAbout] = useState('')
   
   const toggleForm = () => {
+    setNewAbout(currentAbout)
     let aboutText = document.querySelector('#about-text')
     let toggleUpdateAboutFormButton = document.querySelector('#toggle-update-about-form-button') 
     let updateAboutForm = document.querySelector('#update-about-form')
@@ -31,10 +33,11 @@ const About = (props) => {
       e.preventDefault()
       console.log('submitHandler')
       axios.patch('http://localhost:3000/api/user', {
-        about: about
+        about: newAbout
       })
       .then(response => {
         console.log(response)
+        setCurrentAbout(newAbout)
         toggleForm()
       })
       .catch(error => console.log(error))
@@ -44,7 +47,8 @@ const About = (props) => {
     axios.get('http://localhost:3000/api/user')
     .then(response => {
       console.log(response)
-      setAbout(response.data.user.about)
+      setCurrentAbout(response.data.user.about)
+      setNewAbout(response.data.user.about)
     })
   }, [])
 
@@ -59,11 +63,11 @@ const About = (props) => {
         <br />
         <br />
         <form onSubmit={submitHandler} id='update-about-form' className='hidden-update-about-form'>
-          <textarea type='text' name='about' value={about} placeholder='Enter any details about yourself you would like.' onChange={e => setAbout(e.target.value)} />
+          <textarea type='text' name='newAbout' value={newAbout} placeholder='Enter any details about yourself you would like.' onChange={e => setNewAbout(e.target.value)} />
           <br />
           <button type='submit'>Save</button>
         </form>
-      <p id='about-text' className='shown-about-text'>{about}</p>
+      <p id='about-text' className='shown-about-text'>{currentAbout}</p>
       </div>
     )
   }
@@ -74,7 +78,7 @@ const About = (props) => {
         <h1>Silver Sepmeier</h1>
         <img src={silverPortrait} alt='Portrait' id='silver-portrait'/>
       </div>
-      <p>{about}</p>
+      <p>{currentAbout}</p>
     </div>
   )
 }
