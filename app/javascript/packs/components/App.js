@@ -20,6 +20,7 @@ const App = () => {
     .then(response => {
       console.log(response)
       setLoggedIn(response.data.loggedIn)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }

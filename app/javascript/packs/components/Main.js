@@ -8,7 +8,7 @@ import NotFound from './NotFound'
 const Main = (props) => {
   const {
     loginHandler,
-    loggedIn,
+    loggedIn
   } = props
 
 
