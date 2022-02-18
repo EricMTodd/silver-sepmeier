@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 const Admin = () => {
   const [name, setName] = useState('')
@@ -7,7 +8,25 @@ const Admin = () => {
   const submitHandler = (e) => {
     e.preventDefault()
     console.log('submitHandler')
+    axios.patch('http://localhost:3000/api/user', {
+      name: name,
+      password: password
+    })
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => console.log(error))
   }
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/api/user')
+    .then(response => {
+      console.log(response)
+      setName(response.data.user.name)
+      setPassword(response.data.user.password)
+    })
+    .catch(error => console.log(error))
+  }, [])
 
   return(
     <div id='admin'>

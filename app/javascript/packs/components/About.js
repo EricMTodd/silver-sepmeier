@@ -32,7 +32,7 @@ const About = (props) => {
     const submitHandler = (e) => {
       e.preventDefault()
       console.log('submitHandler')
-      axios.patch('http://localhost:3000/api/user', {
+      axios.patch('http://localhost:3000/api/update_about', {
         about: newAbout
       })
       .then(response => {

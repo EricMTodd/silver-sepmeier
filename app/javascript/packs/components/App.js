@@ -30,7 +30,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/loggedIn')
+    axios.get('http://localhost:3000/api/logged_in')
     .then(response => {
       console.log(response)
       setLoggedIn(response.data.loggedIn)

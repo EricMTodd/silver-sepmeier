@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def update_about
     user = User.first
 
     if user.update(about: params[:about])
