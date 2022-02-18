@@ -10,13 +10,11 @@ const Login = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log('submitHandler')
     axios.post('http://localhost:3000/api/login', {
       name: name,
       password: password
     })
     .then(response => {
-      console.log(response)
       loginHandler(response.data)
     })
     .catch(error => console.log(error))

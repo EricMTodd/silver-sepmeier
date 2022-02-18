@@ -15,10 +15,8 @@ const App = () => {
   }
 
   const logoutHandler = () => {
-    console.log('logoutHandler')
     axios.delete('http://localhost:3000/api/logout')
     .then(response => {
-      console.log(response)
       setLoggedIn(response.data.loggedIn)
       navigate('/')
     })
@@ -28,7 +26,6 @@ const App = () => {
   useEffect(() => {
     axios.get('http://localhost:3000/api/logged_in')
     .then(response => {
-      console.log(response)
       setLoggedIn(response.data.loggedIn)
     })
     .catch(error => console.log(error))

@@ -12,7 +12,6 @@ const Admin = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log('submitHandler')
     axios.patch('http://localhost:3000/api/user', {
       user: {
         name: name,
@@ -20,7 +19,6 @@ const Admin = (props) => {
       }
     })
     .then(response => {
-      console.log(response)
       navigate('/')
     })
     .catch(error => console.log(error))
@@ -29,7 +27,6 @@ const Admin = (props) => {
   useEffect(() => {
     axios.get('http://localhost:3000/api/user')
     .then(response => {
-      console.log(response)
       setName(response.data.user.name)
       setPassword(response.data.user.password)
     })

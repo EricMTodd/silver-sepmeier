@@ -31,14 +31,12 @@ const About = (props) => {
   
     const submitHandler = (e) => {
       e.preventDefault()
-      console.log('submitHandler')
       axios.patch('http://localhost:3000/api/user', {
         user: {
           about: newAbout
         }
       })
       .then(response => {
-        console.log(response)
         setCurrentAbout(newAbout)
         toggleForm()
       })
@@ -48,7 +46,6 @@ const About = (props) => {
     useEffect(() => {
       axios.get('http://localhost:3000/api/user')
       .then(response => {
-        console.log(response)
         setCurrentAbout(response.data.user.about)
       })
       .catch(error => console.log(error))
