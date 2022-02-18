@@ -82,6 +82,10 @@
     padding-bottom: 15px;
   }
 
+  #about-text {
+    white-space: pre;
+  }
+
   #footer {
     background-color: black;
     height: 25px;
