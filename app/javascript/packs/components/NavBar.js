@@ -34,6 +34,7 @@ const NavBar = (props) => {
         <button onClick={() => logoutHandler()}>Log out</button>
         <div id='nav-links' className='hidden-nav-links'>
           <Link to='/' onClick={() => toggleNav()}>About</Link>
+          <Link to='/gallery' onClick={() => toggleNav()}>Gallery</Link>
         </div>
       </div>
     )
@@ -48,6 +49,7 @@ const NavBar = (props) => {
       </div>
       <div id='nav-links' className='hidden-nav-links'>
         <Link to='/' onClick={() => toggleNav()}>About</Link>
+        <Link to='/gallery' onClick={() => toggleNav()}>Gallery</Link>
       </div>
     </div>
   )
