@@ -7,14 +7,10 @@ import Footer from './Footer'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false)
-  const [user, setUser] = useState({})
   const navigate = useNavigate()
 
   const loginHandler = (data) => {
-    console.log('loginHandler')
-    console.log(data)
     setLoggedIn(data.loggedIn)
-    setUser(data.user)
     navigate('/')
   }
 
@@ -24,7 +20,6 @@ const App = () => {
     .then(response => {
       console.log(response)
       setLoggedIn(response.data.loggedIn)
-      setUser(response.data.user)
     })
     .catch(error => console.log(error))
   }
@@ -34,7 +29,6 @@ const App = () => {
     .then(response => {
       console.log(response)
       setLoggedIn(response.data.loggedIn)
-      setUser(response.data.user)
     })
     .catch(error => console.log(error))
   }, [])

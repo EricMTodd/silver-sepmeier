@@ -1,19 +1,24 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Admin = () => {
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const submitHandler = (e) => {
     e.preventDefault()
     console.log('submitHandler')
     axios.patch('http://localhost:3000/api/user', {
-      name: name,
-      password: password
+      user: {
+        name: name,
+        password: password,
+      }
     })
     .then(response => {
       console.log(response)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }

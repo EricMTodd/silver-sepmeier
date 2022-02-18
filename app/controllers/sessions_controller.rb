@@ -6,13 +6,11 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: {
         message: 'Successfully logged in.',
-        user: user,
         loggedIn: true
       }
     else
       render json: {
         message: 'Failed to log in!',
-        user: {},
         loggedIn: false
       }
     end
@@ -22,7 +20,6 @@ class SessionsController < ApplicationController
     reset_session
     render json: {
       message: 'Successfully logged out.',
-      user: {},
       loggedIn: false
     }
   end
@@ -32,13 +29,11 @@ class SessionsController < ApplicationController
       user = User.first
       render json: {
         message: 'Logged in.',
-        user: user,
         loggedIn: true
       }
     else
       render json: {
         message: 'Logged out.',
-        user: {},
         loggedIn: false
       }
     end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Users
   get 'api/user', to: 'users#show'
-  patch 'api/update_about', to: 'users#update_about'
+  patch 'api/user', to: 'users#update'
 
   get '*path', to: 'static#index'
 end

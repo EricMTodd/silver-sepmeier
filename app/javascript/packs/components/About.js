@@ -4,7 +4,7 @@ import silverPortrait from '../../../assets/images/silver-portrait.png'
 
 const About = (props) => {
   const {
-    loggedIn
+    loggedIn,
   } = props
   const [currentAbout, setCurrentAbout] = useState('')
   const [newAbout, setNewAbout] = useState('')
@@ -32,8 +32,10 @@ const About = (props) => {
     const submitHandler = (e) => {
       e.preventDefault()
       console.log('submitHandler')
-      axios.patch('http://localhost:3000/api/update_about', {
-        about: newAbout
+      axios.patch('http://localhost:3000/api/user', {
+        user: {
+          about: newAbout
+        }
       })
       .then(response => {
         console.log(response)
@@ -43,14 +45,14 @@ const About = (props) => {
       .catch(error => console.log(error))
     }
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/api/user')
-    .then(response => {
-      console.log(response)
-      setCurrentAbout(response.data.user.about)
-      setNewAbout(response.data.user.about)
-    })
-  }, [])
+    useEffect(() => {
+      axios.get('http://localhost:3000/api/user')
+      .then(response => {
+        console.log(response)
+        setCurrentAbout(response.data.user.about)
+      })
+      .catch(error => console.log(error))
+    }, [])
 
   if (loggedIn) {
     return(

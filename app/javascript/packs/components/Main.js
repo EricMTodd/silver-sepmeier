@@ -7,7 +7,7 @@ import Admin from './Admin'
 const Main = (props) => {
   const {
     loginHandler,
-    loggedIn
+    loggedIn,
   } = props
 
 

@@ -15,10 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def update_about
+  def update
     user = User.first
 
-    if user.update(about: params[:about])
+    if user.update(user_params)
       render json: {
         message: 'Successfully updated user.',
         user: user
@@ -29,5 +29,11 @@ class UsersController < ApplicationController
         user: user
       }
     end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password, :about)
   end
 end
