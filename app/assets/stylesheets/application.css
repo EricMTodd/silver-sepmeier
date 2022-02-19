@@ -170,13 +170,96 @@
   /* Global selectors */
   * {
     font-family: 'fira sans', arial, sans-serif;
+    color: white;
   }
 
   body {
     margin: 0 auto;
   }
 
+  button, input, textarea {
+    color: black;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Class selectors */
 
   /* Id selectors */
+  #about {
+    font-size: 24px;
+  }
+
+  #about-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #about-header h1 {
+    font-size: 72px;
+  }
+
+  #silver-portrait {
+    border-radius: 50%;
+    height: 512px;
+    box-shadow: 0 0 10px black;
+  }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    height: 25px;
+  }
+
+  #footer a {
+    margin-left: 5px;
+  }
+
+  #gallery {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  #gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #gallery-images img {
+    width: 30%;
+    margin: 5px;
+    box-shadow: 0 0 10px black;
+    border-radius: 5px;
+  }
+  
+  #main {
+    background-color: rgba(50, 50, 50, 1);
+    padding-left: calc(33.333% / 2);
+    padding-right: calc(33.333% / 2);
+    height: calc(100vh - 75px);
+    overflow-y: scroll;
+  }
+
+  #nav {
+    display: flex;
+    background-color: black;
+    height: 50px;
+    align-items: center;
+  }
+
+  #nav-links * {
+    margin-left: 25px;
+    font-size: 24px;
+  }
 }

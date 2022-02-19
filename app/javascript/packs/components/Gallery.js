@@ -24,7 +24,9 @@ const Gallery = () => {
   return(
     <div id='gallery'>
       <h1>Gallery</h1>
-      {urls.map((url, index) => <img key={index} src={url} alt={`img-${index}`} />)}
+      <div id='gallery-images'>
+        {urls.map((url, index) => <img key={index} src={url} alt={`img-${index}`} />)}
+      </div>
     </div>
   )
 }
