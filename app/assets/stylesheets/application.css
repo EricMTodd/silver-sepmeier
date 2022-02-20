@@ -201,46 +201,50 @@
   #about-header h1 {
     font-size: 72px;
   }
-
-  #silver-portrait {
-    border-radius: 50%;
-    height: 512px;
-    box-shadow: 0 0 10px black;
-  }
-
+  
   #app {
     display: flex;
     flex-direction: column;
   }
 
+  #contact {
+    background-color: black;
+  }
+  
   #footer {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: black;
     height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
+  
   #footer a {
     margin-left: 5px;
   }
-
+  
   #gallery {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
   }
-
+  
   #gallery-images {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
-
+  
   #gallery-images img {
-    width: 30%;
-    margin: 5px;
-    box-shadow: 0 0 10px black;
+    height: 30vh;
+    margin: auto;
+    box-shadow: 0 0 30px black;
     border-radius: 5px;
+    transition: 0.2s;
+    margin-bottom: 30px;
   }
   
   #main {
@@ -250,16 +254,22 @@
     height: calc(100vh - 75px);
     overflow-y: scroll;
   }
-
+  
   #nav {
     display: flex;
     background-color: black;
     height: 50px;
     align-items: center;
   }
-
+  
   #nav-links * {
     margin-left: 25px;
     font-size: 24px;
+  }
+
+  #silver-portrait {
+    border-radius: 50%;
+    height: 512px;
+    box-shadow: 0 0 30px black;
   }
 }
