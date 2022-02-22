@@ -15,7 +15,7 @@ const App = () => {
   }
 
   const logoutHandler = () => {
-    axios.delete('http://localhost:3000/api/logout')
+    axios.delete('https://silversepmeier.herokuapp.com/api/logout')
     .then(response => {
       setLoggedIn(response.data.loggedIn)
       navigate('/')
@@ -24,7 +24,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/logged_in')
+    axios.get('https://silversepmeier.herokuapp.com/api/logged_in')
     .then(response => {
       setLoggedIn(response.data.loggedIn)
     })

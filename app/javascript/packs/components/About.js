@@ -31,7 +31,7 @@ const About = (props) => {
   
     const submitHandler = (e) => {
       e.preventDefault()
-      axios.patch('http://localhost:3000/api/user', {
+      axios.patch('https://silversepmeier.herokuapp.com/api/user', {
         user: {
           about: newAbout
         }
@@ -44,7 +44,7 @@ const About = (props) => {
     }
 
     useEffect(() => {
-      axios.get('http://localhost:3000/api/user')
+      axios.get('https://silversepmeier.herokuapp.com/api/user')
       .then(response => {
         setCurrentAbout(response.data.user.about)
       })

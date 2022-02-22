@@ -12,7 +12,7 @@ const Admin = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    axios.patch('http://localhost:3000/api/user', {
+    axios.patch('https://silversepmeier.herokuapp.com/api/user', {
       user: {
         name: name,
         password: password,
@@ -25,7 +25,7 @@ const Admin = (props) => {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/user')
+    axios.get('https://silversepmeier.herokuapp.com/api/user')
     .then(response => {
       setName(response.data.user.name)
       setPassword(response.data.user.password)
